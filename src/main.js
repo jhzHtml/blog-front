@@ -11,6 +11,8 @@ import "normalize.css";
 import Particles from "@tsparticles/vue3";
 import { loadSlim } from "@tsparticles/slim";
 
+// 阿里字体图标
+import "@/assets/icon/iconfont.css";
 
 const app = createApp(App);
 
