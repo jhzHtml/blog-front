@@ -3,17 +3,39 @@
         <div class="main">
             <div class="site-name">码语人生</div>
             <ul>
-                <li class="active">博文</li>
-                <li>留言</li>
-                <li>时间轴</li>
-                <li>朋友圈</li>
+                <li v-for="(item, index) in list" :key="index" :class="{ active: isActive(item.path) }"
+                    @click="handleToPath(item.path)">
+                    {{ item.name }}
+                </li>
             </ul>
         </div>
-
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+
+const isActive = (path) => {
+    return route.path === path;
+}
+
+const list = ref([
+    { name: "博文", path: "/" },
+    { name: "留言", path: "/message" },
+    { name: "时间轴", path: "/timeline" },
+    { name: "聊天室", path: "/chatRoom" },
+    { name: "关于我", path: "/about" },
+]);
+
+
+const handleToPath = (path) => {
+    router.push({ path });
+}
+</script>
 
 <style lang="less" scoped>
 .header-container {
@@ -36,9 +58,10 @@
     ul {
         .flex-end();
         color: @text;
+        gap: 10px;
 
         li {
-            width: 100px;
+            width: 90px;
             text-align: center;
             list-style: none;
             margin: 0;

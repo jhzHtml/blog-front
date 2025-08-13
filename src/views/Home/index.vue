@@ -70,6 +70,7 @@ import Pagination from "@/components/Pagination/index.vue"
 .home-container {
     width: 100%;
     color: #333;
+    padding-top: 20px;
 
     .main {
         width: @width;

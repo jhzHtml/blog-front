@@ -6,8 +6,7 @@
         <div class="main">
             <div class="footer-item">Copyright © 2025 Jhz版权所有.</div>
             <div class="footer-link">
-                <a href="#" target="_blank">鲁公网安备 37172202371930号</a>
-                <a href="#" target="_blank">鲁公网安备 37172202371930号</a>
+                <a href="#" target="_blank">鲁ICP备2025179305号</a>
             </div>
         </div>
     </footer>
